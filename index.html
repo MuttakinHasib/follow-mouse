@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Follow Mouse</title>
+</head>
+
+<body>
+
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+
+    <script>
+        document.body.style.cursor = 'none';
+
+        const cursor = document.createElement('div');
+        cursor.classList.add('cursor');
+        document.body.appendChild(cursor);
+
+        const follow = document.createElement('div');
+        follow.classList.add('follow');
+        document.body.appendChild(follow);
+
+        function move(obj, e) {
+            obj.style = '';
+            obj.style.top = e.clientY + 'px';
+            obj.style.left = e.clientX + 'px';
+        }
+
+        if (cursor) {
+            window.addEventListener('mousemove', e => {
+                let t = e.target;
+                let f = follow;
+                let c = cursor;
+
+                if (t.tagName == 'A') {
+
+                    c.style.backgroundColor = 'transparent';
+                    f.style.top = t.offsetTop + 'px';
+                    f.style.left = t.offsetLeft + 'px';
+                    let ot = f.style.top = t.offsetTop + 'px';
+                    let ol = f.style.left = t.offsetLeft + 'px';
+
+
+                    f.style.width = t.clientWidth + 'px';
+                    f.style.height = t.clientHeight + 'px';
+
+                    f.classList.add('on-focus');
+                } else {
+                    move(c, e);
+                    move(f, e);
+                    f.classList.remove('on-focus');
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
