@@ -52,7 +52,7 @@ a:hover {
 }
 
 .follow {
-  border: 0.1rem dotted #fff;
+  border: 0.1rem dashed #fff;
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -69,27 +69,5 @@ a:hover {
   -webkit-animation: none;
           animation: none;
   padding: 10px 20px;
-}
-
-@-webkit-keyframes play {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes play {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
 }
 /*# sourceMappingURL=style.css.map */
